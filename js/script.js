@@ -32,8 +32,8 @@ $(function(){
   				window.alert('Enter name');
   				return;
   			}
-  			else if( $inputField.find('input[data-input=2]').val() == '' || $inputField.find('input[data-input=2]').length == 1 || $inputField.find('input[data-input=2]').val() == '00'){
-  				window.alert('Enter valid age' + $inputField.find('input[data-input=2]').val());
+  			else if( $inputField.find('input[data-input=2]').val() == '' || $inputField.find('input[data-input=2]').val().length == 1 || $inputField.find('input[data-input=2]').val() == '00'){
+  				window.alert('Enter valid age');
   				return;
   			}
   			else if( $inputField.find('input[data-input=5]').val() == '' ){
