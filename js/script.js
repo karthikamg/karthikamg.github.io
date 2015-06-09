@@ -50,10 +50,7 @@ $(function(){
 	  			for( var i=1; i<7; ++i) {
 	  				$values.push($inputField.find('input[data-input='+i+']').val());
 	  			}
-	  			$("table").find('tbody')
-				.append($('<tr> <td></td> </tr>'));
   			}
-  			
   		}		
 	});
 
