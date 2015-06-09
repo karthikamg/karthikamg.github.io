@@ -1,0 +1,47 @@
+@import "compass";
+@import 'helpers/_base';
+@import 'helpers/_variables';
+
+footer{
+	padding-top: 15px;
+  	border-top: 5px solid $color-grblue;
+  	background: linear-gradient($color-grblue, $color-white);
+
+	ul{
+		display: table;
+		float:left;
+
+		li{
+			display: table-cell;
+			width: 45px;
+
+			a{
+					img{
+					width: 30px;
+					height: 30px;
+				}
+			}			
+		}
+	}
+}
+
+.footer-links{
+	float: right;
+	ul{
+		display: inline-block;
+		li{
+			width: 100px;
+			display: inline-block;
+
+			a{
+				color: $color-black;
+				text-decoration: none;
+
+				&:hover{
+					text-decoration: underline;
+					color: $color-blue;
+				}
+			}
+		}
+	}
+}

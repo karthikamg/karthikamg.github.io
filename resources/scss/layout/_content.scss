@@ -1,0 +1,97 @@
+@import "compass";
+@import 'helpers/_base';
+@import 'helpers/_variables';
+
+.content{
+	width: 100%;
+	height: auto;
+	padding: 40px 0;
+	overflow: hidden;
+	position: relative;
+
+	.form{				
+		padding: 12px;		
+
+		@media screen and (max-width: 760px){
+			width: 100%;
+		}
+		@media screen and (min-width: 760px){
+			@include float-left;
+			border: 1px solid $color-darkred;
+			width: 40%;
+		}
+
+	}
+	.table{
+
+		@media screen and (max-width: 760px){
+			width: 100%;
+			margin-top: 50px;
+		}
+		@media screen and (min-width: 760px){
+			@include float-right;
+			width: 56%;
+		}
+		
+		input{
+			padding: 5px;
+		}
+		
+		table{
+			@media screen and (max-width: 760px){
+				margin-top: 25px;
+			}
+			@media screen and (min-width: 760px){
+				margin-top: 15px;
+			}			
+		}
+	}
+}
+
+.labels{	
+	height: auto;
+	float: left;
+
+	@media screen and (max-width: 760px){
+		width: 30%;
+	}
+	@media screen and (min-width: 760px){
+		width: 23%;
+	}
+}
+
+.input-fields{
+  	height: auto;
+  	float: right;
+  	line-height: 3;
+
+  	@media screen and (max-width: 760px){
+		width: 70%;
+	}
+	@media screen and (min-width: 760px){
+		width: 77%;
+	}
+}
+
+.input-style{
+	width: 90%;
+	height: 20px;
+}
+
+.reset{
+	@include float-right;
+	color: $color-red;
+}
+
+.search{
+	margin-left: 20px;
+}
+
+.input-search-style{
+	@extend .input-style;
+	width: 70%;	
+
+	@media screen and (min-width: 760px) and (max-width: 825px){
+		width: 60%;
+	}
+}

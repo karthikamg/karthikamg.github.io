@@ -1,0 +1,48 @@
+@import '_variables';
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Slabo 27px', serif;
+	min-height: 100%;
+  	position: relative;
+  	background: url('../resources/images/bg.jpg') no-repeat;
+  	background-size: cover;
+}
+
+label{
+	display: block;
+	line-height: 3;
+	font-weight: bold;
+}
+
+table, th, td {
+    border: 1px solid $color-darkred;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+tr{
+	text-align: center;
+}
+
+table{
+	width: 100%;
+}
+
+ul{
+	li{
+		list-style-type: none;
+		text-decoration: none;
+	}
+}
+
+button{
+	width: 100px;
+    height: 30px;
+}

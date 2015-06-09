@@ -1,0 +1,25 @@
+@import "compass";
+@import 'helpers/_base';
+@import 'helpers/_variables';
+
+
+.container{
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 10px;
+	color: $color-black;
+	overflow: hidden;
+	background-color: $color-white;
+}
+
+.page-header{
+	width: 100%;
+	text-transform: uppercase;
+	text-align: center;
+	border: 1px solid $color-darkred;
+	background-color: $color-grblue;
+
+	h2{
+		font-size: 35px;
+	}
+}

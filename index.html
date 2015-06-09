@@ -1,1 +1,115 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Directory</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src="lib/jquery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="container">
+		<!-- main header -->
+		<header class="page-header">
+			<h2>Employee Directory</h2>
+		</header>
+
+		<!-- main content -->
+		<div class="content">
+			<div class="form">
+				<div class="labels">
+					<label>Name :</label>
+					<label>Age :</label>
+					<label>Gender :</label>
+					<label>Desig. :</label>
+					<label>Exp.(yrs) :</label>
+					<label>Salary :</label>
+				</div>
+				<div class="input-fields">
+					<input type="text" class="input-style" data-input="1" maxlength="30">
+					<input type="text" class="input-style" data-input="2" maxlength="2">
+					<select class="input-style" data-input="3">
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+					<select class="input-style" data-input="4">
+						<option value="programmer">Programmer</option>
+						<option value="software">Software Engineer</option>
+						<option value="tester">Test Engineer</option>
+						<option value="srSoftware">Sr. Software Engineer</option>
+						<option value="projectEng">Project Engineer</option>
+						<option value="projectMang">Project Manager</option>
+						<option value="admin">System Administrator</option>
+					</select>
+					<input type="text" class="input-style" data-input="5" maxlength="2">
+					<input type="text" class="input-style" data-input="6" maxlength="6">
+				</div>
+				<button class="submit">Submit</button>
+				<button class="reset">Reset</button>
+
+			</div>
+
+			<div class="table">
+			<input type="text" placeholder="search by employee name" class="input-search-style"><button class="search">search</button>
+				<table>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Age</th>
+						<th>Gender</th>
+						<th>Designation</th>
+						<th>Exp</th>
+						<th>Salary</th>
+					</tr>
+					<tr>
+						<td>001</td>
+						<td>Nikita</td>
+						<td>25</td>
+						<td>F</td>
+						<td>Software Engineer</td>
+						<td>5</td>
+						<td>30K</td>
+					</tr>
+					<tr>
+						<td>002</td>
+						<td>Seena</td>
+						<td>28</td>
+						<td>F</td>
+						<td>Test Engineer</td>
+						<td>2</td>
+						<td>20K</td>
+					</tr>
+					<tr>
+						<td>003</td>
+						<td>Abhay</td>
+						<td>32</td>
+						<td>M</td>
+						<td>System Administrator</td>
+						<td>8</td>
+						<td>40K</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<!--main footer -->
+		<footer>
+			<ul>
+				<li><a href="#"><img src="resources/images/blackfb.png"></a></li>
+				<li><a href="#"><img src="resources/images/blacktwitter.png"></a></li>
+				<li><a href="#"><img src="resources/images/blackutube.png"></a></li>
+				<li><a href="#"><img src="resources/images/blackwatsapp.png"></a></li>
+			</ul>
+
+			<div class="footer-links">
+				<ul>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Disclaimer</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+</body>
+</html>
