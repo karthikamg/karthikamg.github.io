@@ -53,7 +53,15 @@ $(function(){
   			}
   			else{
 
-  				var num = parseInt($table.find('tr:last td:first').text())+1;
+  				var $num	=	$table.find('tr:last td:first').text(),
+  					num = 1;
+
+  				if($table.find('tr').length > 1 ) {
+  					var num = parseInt($num)+1;
+  				}
+  				else {
+  					num = 1;
+  				}
 
   				var $values = [];
   				window.alert('ready to submit');
@@ -98,7 +106,7 @@ $(function(){
 
 				} );
 
-				if(found == true) {  console.log(rowIndex);
+				if(found == true) {
 					$table.find('tr:eq('+rowIndex+')').show(); 					
 				}
 				else {
