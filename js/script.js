@@ -18,7 +18,7 @@ $(function(){
     	}
    });
 
-	$(".input-fields input[data-input=1]").keypress(function (e) {
+	$(".input-fields input[data-input=1], .table input").keypress(function (e) {
     if (e.which < 97 || e.which > 122) {       
             return false;
     	}
@@ -50,7 +50,7 @@ $(function(){
 	  			for( var i=1; i<7; ++i) {
 	  				$values.push($inputField.find('input[data-input='+i+']').val());
 	  			}
-  			}
+  			} 			
   		}		
 	});
 

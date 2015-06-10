@@ -4,8 +4,9 @@
 
 footer{
 	padding-top: 15px;
-  	border-top: 5px solid $color-grblue;
-  	background: linear-gradient($color-grblue, $color-white);
+  	border-top: 5px solid $color-ltbrown;
+  	background: linear-gradient($color-ltbrown, $color-white);
+  	overflow: hidden;
 
 	ul{
 		display: table;

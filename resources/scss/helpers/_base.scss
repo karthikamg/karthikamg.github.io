@@ -11,8 +11,8 @@ body{
 	font-family: 'Slabo 27px', serif;
 	min-height: 100%;
   	position: relative;
-  	background: url('../resources/images/bg.jpg') no-repeat;
-  	background-size: cover;
+  	// background: url('../resources/images/bg.jpg') no-repeat;
+  	// background-size: cover;
 }
 
 label{
@@ -45,4 +45,7 @@ ul{
 button{
 	width: 100px;
     height: 30px;
+    background-color: $color-drgrey;
+    color: $color-white;
+    border-radius: 5px;
 }

@@ -4,9 +4,9 @@
 
 
 .container{
-	margin: 0 auto;
-	max-width: 1200px;
-	padding: 10px;
+	// margin: 0 auto;
+	// max-width: 1200px;
+	// padding: 30px 20px;
 	color: $color-black;
 	overflow: hidden;
 	background-color: $color-white;
@@ -16,10 +16,11 @@
 	width: 100%;
 	text-transform: uppercase;
 	text-align: center;
-	border: 1px solid $color-darkred;
 	background-color: $color-grblue;
+	background: linear-gradient($color-drbrown, $color-white);
 
 	h2{
-		font-size: 35px;
+		font-size: 40px;
+		padding: 15px;
 	}
 }
