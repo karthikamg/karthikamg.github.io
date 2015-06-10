@@ -42,7 +42,7 @@
 		
 		input{
 			padding: 5px;
-			margin-top: 20px;
+			margin-top: 15px;
 		}
 		
 		table{
@@ -97,7 +97,7 @@
 }
 
 .search{
-	margin-left: -100px;
+	margin-left: -105px;
 }
 
 .input-search-style{
@@ -108,4 +108,10 @@
 	@media screen and (min-width: 760px) and (max-width: 825px){
 		width: 60%;
 	}
+}
+
+.refresh{
+	width: 29px;
+	height: 27px;
+	margin-left: 15px;
 }

@@ -36,14 +36,18 @@ tr {
 table {
   width: 100%;
 }
+/* line 38, ../resources/scss/helpers/_base.scss */
+table tr th {
+  cursor: pointer;
+}
 
-/* line 39, ../resources/scss/helpers/_base.scss */
+/* line 45, ../resources/scss/helpers/_base.scss */
 ul li {
   list-style-type: none;
   text-decoration: none;
 }
 
-/* line 45, ../resources/scss/helpers/_base.scss */
+/* line 51, ../resources/scss/helpers/_base.scss */
 button {
   width: 100px;
   height: 30px;
@@ -111,14 +115,18 @@ tr {
 table {
   width: 100%;
 }
+/* line 38, ../resources/scss/helpers/_base.scss */
+table tr th {
+  cursor: pointer;
+}
 
-/* line 39, ../resources/scss/helpers/_base.scss */
+/* line 45, ../resources/scss/helpers/_base.scss */
 ul li {
   list-style-type: none;
   text-decoration: none;
 }
 
-/* line 45, ../resources/scss/helpers/_base.scss */
+/* line 51, ../resources/scss/helpers/_base.scss */
 button {
   width: 100px;
   height: 30px;
@@ -181,7 +189,7 @@ button {
 /* line 43, ../resources/scss/layout/_content.scss */
 .content .table input {
   padding: 5px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 @media screen and (max-width: 760px) {
   /* line 48, ../resources/scss/layout/_content.scss */
@@ -253,7 +261,7 @@ button {
 
 /* line 99, ../resources/scss/layout/_content.scss */
 .search {
-  margin-left: -100px;
+  margin-left: -105px;
 }
 
 /* line 103, ../resources/scss/layout/_content.scss */
@@ -266,6 +274,13 @@ button {
   .input-search-style {
     width: 60%;
   }
+}
+
+/* line 113, ../resources/scss/layout/_content.scss */
+.refresh {
+  width: 29px;
+  height: 27px;
+  margin-left: 15px;
 }
 
 /* line 3, ../resources/scss/helpers/_base.scss */
@@ -306,14 +321,18 @@ tr {
 table {
   width: 100%;
 }
+/* line 38, ../resources/scss/helpers/_base.scss */
+table tr th {
+  cursor: pointer;
+}
 
-/* line 39, ../resources/scss/helpers/_base.scss */
+/* line 45, ../resources/scss/helpers/_base.scss */
 ul li {
   list-style-type: none;
   text-decoration: none;
 }
 
-/* line 45, ../resources/scss/helpers/_base.scss */
+/* line 51, ../resources/scss/helpers/_base.scss */
 button {
   width: 100px;
   height: 30px;

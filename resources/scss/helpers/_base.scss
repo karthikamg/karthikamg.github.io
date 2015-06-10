@@ -33,6 +33,12 @@ tr{
 
 table{
 	width: 100%;
+
+	tr{
+		th{
+			cursor: pointer;
+		}
+	}
 }
 
 ul{
