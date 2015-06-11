@@ -25,11 +25,18 @@ $(function(){
     	}
    });
 
-	$(".input-fields input[data-input=1], .table input").keypress(function (e) {
-    if (e.which < 97 || e.which > 122) {       
-            return false;
-    	}
-   });
+	// $(".input-fields input[data-input=1], .table input").keypress(function (e) {
+ //    if (e.which < 97 || e.which > 122) {       
+ //            return false;
+ //    	}
+ //   });
+
+	$('.input-fields input[data-input=1], .table input').keydown(function (e) {
+		var key = e.keyCode;
+		if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+			e.preventDefault();
+		}
+	});
 
 	$submit.on( 'click', function(e) {
 		var target = $( event.target );
@@ -86,33 +93,33 @@ $(function(){
 
 	$searchBtn.click( function() {
 		var searchName = $search.val(),
-			found = false;			
+			found = false;
 
-		$table.find('tr').each( function() {
+		$table.find('tr').each( function() { 
 			
 			var allCells = $(this).find('td:nth-child(2)');
 			if(allCells.length > 0) { 
 
 				var rowIndex = 0;
 
-				allCells.each( function() {
-
+				allCells.each( function() { 
+					
 					var regExp = new RegExp(searchName,'i');
-					if(regExp.test(allCells.text())) { 
+					if(regExp.test(allCells.text())) {  
 						found    = true;
 						rowIndex = allCells.closest('tr').index();
 						return false;
-					}
+					} 
 
-				} );
+				} ); 
 
-				if(found == true) {
-					$table.find('tr:eq('+rowIndex+')').show(); 					
+				if(found == true) {  
+					$table.find('tr:eq('+rowIndex+')').show();	
 				}
-				else {
-					$table.find('tr:not(:first-child)').hide();
+				else{ 
+					$table.find('tr:not(:eq('+rowIndex+'))').hide();
+					$table.find('tr:first-child').show();
 				}
-
 			}
 
 		} );
