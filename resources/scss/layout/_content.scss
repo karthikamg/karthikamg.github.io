@@ -26,6 +26,8 @@
 
 		h3{
 			text-align: center;
+			text-decoration: underline;
+			color: $color-brown;
 		}
 
 	}
@@ -55,8 +57,9 @@
 		}
 		h3{
 			text-align: center;
-			text-align: center;
   			margin-top: 10px;
+  			text-decoration: underline;
+			color: $color-brown;
 		}
 	}
 }

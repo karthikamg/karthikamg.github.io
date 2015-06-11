@@ -51,7 +51,13 @@ ul{
 button{
 	width: 100px;
     height: 30px;
-    background-color: $color-drgrey;
+    // background-color: $color-drgrey;
+    background: linear-gradient($color-brown,$color-black);
     color: $color-white;
     border-radius: 5px;
+
+    &:hover{
+    	background: linear-gradient($color-black,$color-brown);
+    	color: $color-white;
+    }
 }

@@ -9,7 +9,9 @@ $(function(){
 		$refresh 		= 		$('.refresh'),
 		$search 		=		$('.input-search-style');
 
-	function resetting() {
+	var $tableContent = [];
+
+	function resetting() {		
 		$input.val('');
 		$select.find('option[value="male"]').attr("selected",true);
 		$select.find('option[value="programmer"]').attr("selected",true);	
@@ -25,12 +27,6 @@ $(function(){
     	}
    });
 
-	// $(".input-fields input[data-input=1], .table input").keypress(function (e) {
- //    if (e.which < 97 || e.which > 122) {       
- //            return false;
- //    	}
- //   });
-
 	$('.input-fields input[data-input=1], .table input').keydown(function (e) {
 		var key = e.keyCode;
 		if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
@@ -39,9 +35,6 @@ $(function(){
 	});
 
 	$submit.on( 'click', function(e) {
-		var target = $( event.target );
-  		if ( target.is( ".submit" ) ){
-
   			if( $inputField.find('input[data-input=1]').val() == '' ){
   				window.alert('Enter name');
   				return;
@@ -85,10 +78,9 @@ $(function(){
 	  			$values.push($( "select[data-input=4] option:selected" ).text());
 
 	  			$table.find('tr:last').after('<tr><td>'+num+'</td><td>'+$values[0]+'</td><td>'+$values[1]+'</td><td>'+$values[6]+'</td><td>'+$values[7]+'</td><td>'+$values[4]+'</td><td>'+$values[5]+'K</td></tr>');
+  				
   				resetting();
-
-  			} 			
-  		}		
+  			}	
 	});
 
 	$searchBtn.click( function() {
@@ -100,25 +92,28 @@ $(function(){
 			var allCells = $(this).find('td:nth-child(2)');
 			if(allCells.length > 0) { 
 
-				var rowIndex = 0;
+				var srowIndex = 0, hrowIndex = 0; found = false;
 
 				allCells.each( function() { 
 					
 					var regExp = new RegExp(searchName,'i');
 					if(regExp.test(allCells.text())) {  
 						found    = true;
-						rowIndex = allCells.closest('tr').index();
-						return false;
+						srowIndex = allCells.closest('tr').index();
 					} 
-
+					else{
+						found = false;
+						hrowIndex = allCells.closest('tr').index();
+					}
+					return false;
 				} ); 
 
-				if(found == true) {  
-					$table.find('tr:eq('+rowIndex+')').show();	
+				if(found == true) {
+					$table.find('tr:eq('+srowIndex+')').show();	
 				}
-				else{ 
-					$table.find('tr:not(:eq('+rowIndex+'))').hide();
+				else{
 					$table.find('tr:first-child').show();
+					$table.find('tr:eq('+hrowIndex+')').hide();	
 				}
 			}
 
