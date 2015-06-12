@@ -6,6 +6,9 @@
 	<script src="lib/jquery/jquery-1.11.3.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+	
+	<meta name="viewport" content="width=device-width">
+
 </head>
 <body>
 	<div class="container">
@@ -54,9 +57,10 @@
 			<div class="table">
 				<h3>Table display and search</h3>
 				<input type="text" placeholder="search by employee name" class="input-search-style" maxlength="30">
-				<button class="search">search</button><button class="refresh"><img src="resources/images/refresh.jpg"></button>		
+				<!-- <button class="search">search</button> -->
+				<button class="refresh"><img src="resources/images/refresh.jpg"></button>		
 				<table>
-					<tr>
+					<tr class="heading">
 						<th>Id</th>
 						<th>Name</th>
 						<th>Age</th>

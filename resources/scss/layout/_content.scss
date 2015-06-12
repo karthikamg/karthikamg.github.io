@@ -5,15 +5,15 @@
 .content{
 	width: 100%;
 	height: auto;
-	padding: 40px 0;
+	padding: 40px 20px;
 	overflow: hidden;
 	position: relative;
 	margin: 0 auto;
- 	max-width: 1200px;
+ 	max-width: 1390px;
  	background-color: $color-ltgrey;
 
 	.form{				
-		padding: 12px;		
+		padding: 11px;		
 
 		@media screen and (max-width: 760px){
 			width: 100%;
@@ -30,9 +30,21 @@
 			color: $color-brown;
 		}
 
+		@media only screen and (max-device-width: 760px){
+			width: 100%;
+		}
+
+		@media only screen and (min-device-width: 760px){
+			@include float-left;
+			border: 1px solid $color-darkred;
+			width: 40%;
+		}
+
 	}
 	.table{
 		text-align: center;
+		padding: 11px;
+
 		@media screen and (max-width: 760px){
 			width: 100%;
 			margin-top: 50px;
@@ -41,6 +53,15 @@
 			@include float-right;
 			width: 56%;
 		}
+
+		@media only screen and (max-device-width: 760px) {
+			width: 100%;
+			margin-top: 50px;
+		}
+		@media only screen and (min-device-width: 760px) {
+			@include float-right;	
+			width: 55%;		
+		} 
 		
 		input{
 			padding: 5px;

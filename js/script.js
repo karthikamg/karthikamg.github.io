@@ -17,6 +17,8 @@ $(function(){
 		$select.find('option[value="programmer"]').attr("selected",true);	
 	}
 
+	$table.find('tbody tr').data('order','unordered');
+
 	$reset.click( function() {
 		resetting();
 	});
@@ -27,7 +29,7 @@ $(function(){
     	}
    });
 
-	$('.input-fields input[data-input=1], .table input').keydown(function (e) {
+	$('.input-fields input[data-input=1]').keydown(function (e) {
 		var key = e.keyCode;
 		if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
 			e.preventDefault();
@@ -83,8 +85,8 @@ $(function(){
   			}	
 	});
 
-	$searchBtn.click( function() {
-		var searchName = $search.val(),
+	$search.keyup( function() {
+		var searchName = this.value,
 			found = false;
 
 		$table.find('tr').each( function() { 
@@ -149,26 +151,34 @@ $(function(){
 	} );
 
 
-	var sort = function( index ) {
+	var sort = function( index ) { 
 		var i=0,
-			$colValues = [];
+			colValues = [];
 
 		$table.find('tr').each( function() {
 			var	allCells = $(this).find('td:nth-child('+index+')');
 
 			allCells.each( function() {
-				$colValues.push(allCells.text());
+				colValues.push(allCells.text());
 			});
 		});	
 
 		// $colValues.sort();
 
-		$colValues.sort(function (a, b) {
+		colValues.sort(function (a, b) {
 		    return a.toLowerCase().localeCompare(b.toLowerCase());
-		});
+		}); 
+
+		if( $table.find('tbody tr').data( 'order' ) == 'asc' ) {
+			$table.find('tbody tr').data( 'order','desc' );
+			colValues = colValues.reverse();
+		}
+		else if( $table.find('tbody tr').data( 'order' ) == 'desc' || $table.find('tbody tr').data( 'order' ) == 'unordered' ) {
+			$table.find('tbody tr').data( 'order','asc' );
+		}
 	
 		$table.find('tr td:nth-child('+index+')').each( function(){
-			$(this).html($colValues[i]);
+			$(this).html(colValues[i]);
 			i++;
 		} );
 	}

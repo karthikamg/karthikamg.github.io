@@ -1,0 +1,66 @@
+var gender		=	[
+	{
+		"gender1"		:	"male"
+		},
+	{
+		"gender2"		:	"female"
+	}
+]
+
+var designation	=	[
+	{
+		"desig1"	:	"Programmer"
+		},
+	{
+		"desig2"	:	"Software Engineer"
+		},
+	{
+		"desig3"	:	"Test Engineer",
+		},
+	{
+		"desig4"	:	"System Engineer",
+		},
+	{
+		"desig5"	:	"Sr. Software Engineer",
+		},
+	{
+		"desig6"	:	"Sr. Test Engineer",
+		},
+	{
+		"desig7"	:	"Project Engineer",
+		},
+	{
+		"desig8"	:	"Project Manager",
+		}
+]
+
+var tableContent	= 	[
+	{
+		"id" 			: 	"1",
+		"name"			:	"Nikita",
+		"age"			:	"25",
+		"gender"		:	"F",
+		"desig"			:	"Software Engineer",
+		"exp"			:	"1",
+		"salary"		:	"25K"
+		},
+	{
+		"id" 			: 	"2",
+		"name"			:	"Abahy",
+		"age"			:	"28",
+		"gender"		:	"F",
+		"desig"			:	"Test Engineer",
+		"exp"			:	"3",
+		"salary"		:	"30K"
+		},
+	{
+		"id" 			: 	"3",
+		"name"			:	"Devananda",
+		"age"			:	"32",
+		"gender"		:	"F",
+		"desig"			:	"Project Engineer",
+		"exp"			:	"8",
+		"salary"		:	"42K"
+		}
+
+]
