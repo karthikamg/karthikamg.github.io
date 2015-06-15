@@ -23,7 +23,7 @@ $(function(){
 	//adding data from json file
 
 	$.getJSON( 'js/data.json', function(json) {
-		var tr;
+		var tr, each = {};
 		for( var i=0; i<json.tableContent.length; i++) {
 			tr = $('<tr/>');
 			tr.append("<td>"+json.tableContent[i].id+"</td>");
@@ -34,7 +34,20 @@ $(function(){
 			tr.append("<td>"+json.tableContent[i].exp+"</td>");
 			tr.append("<td>"+json.tableContent[i].salary+"</td>");
 			$table.append(tr);
+
+			each = {
+	  				id 		: json.tableContent[i].id,
+	  				name 	: json.tableContent[i].name,
+	  				age 	: json.tableContent[i].age,
+	  				gender 	: json.tableContent[i].gender,
+	  				desig 	: json.tableContent[i].desig,
+	  				exp 	: json.tableContent[i].exp,
+	  				salary 	: json.tableContent[i].salary
+			}
+			obj.push(each); 
 		}
+
+		localStorage.setItem('store', JSON.stringify(each));
 
 		for( var i=0; i<json.gender.length; i++) {
 			$('.input-style[data-input=3]').append( '<option value='+json.gender[i].gender+'>'+json.gender[i].gender+'</option>' );
@@ -131,10 +144,16 @@ $(function(){
 
 	  			localStorage.setItem('store', JSON.stringify(obj));
 	  			var store = JSON.parse(localStorage.getItem('store'));
-
 	  			// $table.find('tr:last').after('<tr><td>'+num+'</td><td>'+$values[0]+'</td><td>'+$values[1]+'</td><td>'+$values[6]+'</td><td>'+$values[7]+'</td><td>'+$values[4]+'</td><td>'+$values[5]+'K</td></tr>');
-	  			$table.find('tr:last').after('<tr><td>'+num+'</td><td>'+eachEntry.name+'</td><td>'+eachEntry.age+'</td><td>'+eachEntry.gender+'</td><td>'+eachEntry.name.desig+'</td><td>'+eachEntry.exp+'</td><td>'+eachEntry.salary+'K</td></tr>');
+	  			// $table.find('tr:last').after('<tr><td>'+num+'</td><td>'+eachEntry.name+'</td><td>'+eachEntry.age+'</td><td>'+eachEntry.gender+'</td><td>'+eachEntry.name.desig+'</td><td>'+eachEntry.exp+'</td><td>'+eachEntry.salary+'K</td></tr>');
   				
+	  			$table.find('tr:not(:first-child)').empty();  
+  				
+  				for( var i=0; i< store.length; i++ ){ console.log(store[i].id);
+					$table.find('tr:last').after('<tr> <td>'+store[i].id+'</td> <td>'+store[i].name+'</td> <td>'+store[i].age+'</td> <td>'+store[i].gender+'</td> <td>'+store[i].desig+'</td> <td>'+store[i].exp+'</td> <td>'+store[i].salary+'</td>  </tr>');
+  				}
+
+
   				resetting();
   			}	
 	});
