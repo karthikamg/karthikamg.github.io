@@ -20,6 +20,8 @@ $(function(){
 
 	$table.find('tbody tr').data('order','unordered');
 
+	//adding data from json file
+
 	$.getJSON( 'js/data.json', function(json) {
 		var tr;
 		for( var i=0; i<json.tableContent.length; i++) {
@@ -47,10 +49,11 @@ $(function(){
 		resetting();
 	});
 
-	$(".input-fields input[data-input=2], .input-fields input[data-input=5], .input-fields input[data-input=6]").keypress(function (e) {
-     if (e.which < 48 || e.which > 57 ) {
-            return false;
-    	}
+	$(".input-fields input[data-input=2], .input-fields input[data-input=5], .input-fields input[data-input=6]").keydown(function (e) {
+     var key = e.keyCode;
+     if (!((key == 8) || (key == 46) || (key >= 35 && key <= 40) || !(key > 57 || key <48))) {
+			e.preventDefault();
+		}
 
    });
 
@@ -124,14 +127,14 @@ $(function(){
 		  				salary 	: $inputField.find('input[data-input=6]').val()
 	  				};
 
-	  			obj.push(eachEntry);
+	  			obj.push(eachEntry); 
 
 	  			localStorage.setItem('store', JSON.stringify(obj));
 	  			var store = JSON.parse(localStorage.getItem('store'));
 
 	  			// $table.find('tr:last').after('<tr><td>'+num+'</td><td>'+$values[0]+'</td><td>'+$values[1]+'</td><td>'+$values[6]+'</td><td>'+$values[7]+'</td><td>'+$values[4]+'</td><td>'+$values[5]+'K</td></tr>');
-  				$table.find('tr:last').after('<tr><td>'+num+'</td><td>'+store[0].name+'</td><td>'+store[0].age+'</td><td>'+store[0].gender+'</td><td>'+store[0].name.desig+'</td><td>'+store[0].exp+'</td><td>'+store[0].salary+'K</td></tr>');
-
+	  			$table.find('tr:last').after('<tr><td>'+num+'</td><td>'+eachEntry.name+'</td><td>'+eachEntry.age+'</td><td>'+eachEntry.gender+'</td><td>'+eachEntry.name.desig+'</td><td>'+eachEntry.exp+'</td><td>'+eachEntry.salary+'K</td></tr>');
+  				
   				resetting();
   			}	
 	});
