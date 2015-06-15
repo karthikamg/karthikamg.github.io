@@ -1,39 +1,16 @@
 { 
-	"gender"		:	[
-		{
-			"gender"		:	"Male"
-			},
-		{
-			"gender"		:	"Female"
-		}
-	],
 
- "designation"	:	[
+ "designation"	:
 		{
-			"desig"	:	"Programmer"
-			},
-		{
-			"desig"	:	"Software Engineer"
-			},
-		{
-			"desig"	:	"Test Engineer"
-			},
-		{
-			"desig"	:	"System Engineer"
-			},
-		{
-			"desig"	:	"Sr. Software Engineer"
-			},
-		{
-			"desig"	:	"Sr. Test Engineer"
-			},
-		{
-			"desig"	:	"Project Engineer"
-			},
-		{
-			"desig"	:	"Project Manager"
-			}
-	],
+			"desig1"	:	"Programmer",
+			"desig2"	:	"Software Engineer",
+			"desig3"	:	"Test Engineer",
+			"desig4"	:	"System Engineer",
+			"desig5"	:	"Sr. Software Engineer",
+			"desig6"	:	"Sr. Test Engineer",
+			"desig7"	:	"Project Engineer",
+			"desig8"	:	"Project Manager"
+	},
 
  "tableContent"	: 	[	
 		{

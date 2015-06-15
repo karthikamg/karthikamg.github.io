@@ -22,8 +22,9 @@ $(function(){
 
 	//adding data from json file
 
-	$.getJSON( 'js/data.json', function(json) {
-		var tr, each = {};
+	$.getJSON( 'js/data.json', function(json) {  
+		var desigCount = _.size(json.designation),tr, each = {};
+
 		for( var i=0; i<json.tableContent.length; i++) {
 			tr = $('<tr/>');
 			tr.append("<td>"+json.tableContent[i].id+"</td>");
@@ -49,13 +50,19 @@ $(function(){
 
 		localStorage.setItem('store', JSON.stringify(each));
 
-		for( var i=0; i<json.gender.length; i++) {
-			$('.input-style[data-input=3]').append( '<option value='+json.gender[i].gender+'>'+json.gender[i].gender+'</option>' );
-		}
+		// for( var i=1; i<= desigCount; i++) {
+		// 	$('.input-style[data-input=4]').append( '<option value=' +json.designation.desig+i+ +'>'+ json.designation.desig+i+ +'</option>' );
+		// }
 
-		for( var i=0; i<json.designation.length; i++) {
-			$('.input-style[data-input=4]').append( '<option value='+json.designation[i].desig+'>'+json.designation[i].desig+'</option>' );
-		}
+		$.each( json, function(key,data) { 
+			var i=1;
+			if ( key == 'designation' ){
+				$.each(data, function (index, data) {  console.log(data);
+		       	 $('.input-style[data-input=4]').append( '<option value=D'+i+'>'+data+'</option>' );
+		       	 i++;
+		    	})
+			}						
+		} );
 	} );
 
 	$reset.click( function() {
