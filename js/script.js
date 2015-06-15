@@ -9,7 +9,8 @@ $(function(){
 		$refresh 		= 		$('.refresh'),
 		$search 		=		$('.input-search-style');
 
-	var $tableContent = [];
+	var obj =[];  
+	localStorage.clear();
 
 	function resetting() {		
 		$input.val('');
@@ -19,14 +20,38 @@ $(function(){
 
 	$table.find('tbody tr').data('order','unordered');
 
+	$.getJSON( 'js/data.json', function(json) {
+		var tr;
+		for( var i=0; i<json.tableContent.length; i++) {
+			tr = $('<tr/>');
+			tr.append("<td>"+json.tableContent[i].id+"</td>");
+			tr.append("<td>"+json.tableContent[i].name+"</td>");
+			tr.append("<td>"+json.tableContent[i].age+"</td>");
+			tr.append("<td>"+json.tableContent[i].gender+"</td>");
+			tr.append("<td>"+json.tableContent[i].desig+"</td>");
+			tr.append("<td>"+json.tableContent[i].exp+"</td>");
+			tr.append("<td>"+json.tableContent[i].salary+"</td>");
+			$table.append(tr);
+		}
+
+		for( var i=0; i<json.gender.length; i++) {
+			$('.input-style[data-input=3]').append( '<option value='+json.gender[i].gender+'>'+json.gender[i].gender+'</option>' );
+		}
+
+		for( var i=0; i<json.designation.length; i++) {
+			$('.input-style[data-input=4]').append( '<option value='+json.designation[i].desig+'>'+json.designation[i].desig+'</option>' );
+		}
+	} );
+
 	$reset.click( function() {
 		resetting();
 	});
 
 	$(".input-fields input[data-input=2], .input-fields input[data-input=5], .input-fields input[data-input=6]").keypress(function (e) {
-     if (e.which < 48 || e.which > 57) {       
+     if (e.which < 48 || e.which > 57 ) {
             return false;
     	}
+
    });
 
 	$('.input-fields input[data-input=1]').keydown(function (e) {
@@ -79,8 +104,34 @@ $(function(){
 	  			}
 	  			$values.push($( "select[data-input=4] option:selected" ).text());
 
-	  			$table.find('tr:last').after('<tr><td>'+num+'</td><td>'+$values[0]+'</td><td>'+$values[1]+'</td><td>'+$values[6]+'</td><td>'+$values[7]+'</td><td>'+$values[4]+'</td><td>'+$values[5]+'K</td></tr>');
-  				
+	  			if( $( "select[data-input=3] option:selected" ).text().toLowerCase() == 'male' ){
+	  				gen = 'M';
+	  			}
+	  			else{
+	  				gen = 'F';
+	  			}
+
+	  			var eachEntry = {};
+
+	  			eachEntry = 
+	  				{
+		  				id 		: num,
+		  				name 	: $inputField.find('input[data-input=1]').val(),
+		  				age 	: $inputField.find('input[data-input=2]').val(),
+		  				gender 	: gen,
+		  				desig 	: $( "select[data-input=4] option:selected" ).text(),
+		  				exp 	: $inputField.find('input[data-input=5]').val(),
+		  				salary 	: $inputField.find('input[data-input=6]').val()
+	  				};
+
+	  			obj.push(eachEntry);
+
+	  			localStorage.setItem('store', JSON.stringify(obj));
+	  			var store = JSON.parse(localStorage.getItem('store'));
+
+	  			// $table.find('tr:last').after('<tr><td>'+num+'</td><td>'+$values[0]+'</td><td>'+$values[1]+'</td><td>'+$values[6]+'</td><td>'+$values[7]+'</td><td>'+$values[4]+'</td><td>'+$values[5]+'K</td></tr>');
+  				$table.find('tr:last').after('<tr><td>'+num+'</td><td>'+store[0].name+'</td><td>'+store[0].age+'</td><td>'+store[0].gender+'</td><td>'+store[0].name.desig+'</td><td>'+store[0].exp+'</td><td>'+store[0].salary+'K</td></tr>');
+
   				resetting();
   			}	
 	});
