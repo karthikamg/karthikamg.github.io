@@ -23,7 +23,7 @@ $(function(){
 	//adding data from json file
 
 	$.getJSON( 'js/data.json', function(json) {  
-		var desigCount = _.size(json.designation),tr, each = {};
+		var tr, each = {};
 
 		for( var i=0; i<json.tableContent.length; i++) {
 			tr = $('<tr/>');
@@ -57,7 +57,7 @@ $(function(){
 		$.each( json, function(key,data) { 
 			var i=1;
 			if ( key == 'designation' ){
-				$.each(data, function (index, data) {  console.log(data);
+				$.each(data, function (index, data) { 
 		       	 $('.input-style[data-input=4]').append( '<option value=D'+i+'>'+data+'</option>' );
 		       	 i++;
 		    	})
